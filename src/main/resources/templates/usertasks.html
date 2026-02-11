@@ -17,9 +17,17 @@
         </div>
 
         <nav class="navigation">
-            <h3>Tareas</h3>
+            <h3>Opciones</h3>
             <ul>
-                <li><a th:href="@{/user/tasks}">Tareas de usuario actual</a></li>
+                <li>
+                    <a th:href="@{/user/home}">Inicio</a>
+                </li>
+                <li>
+                    <strong>Tareas de usuario actual</strong>
+                </li>
+                <li>
+                    <a th:href="@{/logout}">Cerrar sesión</a>
+                </li>
             </ul>
         </nav>
     </aside>

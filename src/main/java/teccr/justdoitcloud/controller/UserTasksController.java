@@ -16,19 +16,6 @@ import java.time.LocalDateTime;
 @SessionAttributes("user")
 public class UserTasksController {
 
-    @ModelAttribute(name = "user")
-    public User user() {
-        User usr =  new User("christine", "Christine McVie", "christine@fm.com", User.Type.REGULAR);
-        // Add a few sample tasks
-        Task task = new Task("Comprar Leche", LocalDateTime.now(), null, Task.Status.DONE);
-        usr.addTask(task);
-        task = new Task("Reparacion de sistema de frenos del carro", LocalDateTime.now(),
-                LocalDateTime.now().plusDays(3).toLocalDate(), Task.Status.INPROGRESS);
-        usr.addTask(task);
-        return usr;
-    }
-
-
     @GetMapping
     public String showUserTasks(Model model) {
         model.addAttribute("newTask", new Task("", LocalDateTime.now(), null, Task.Status.INPROGRESS));
