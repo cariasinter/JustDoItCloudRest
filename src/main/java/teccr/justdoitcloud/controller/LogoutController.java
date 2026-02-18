@@ -15,10 +15,6 @@ public class LogoutController {
         return doLogout(session);
     }
 
-    @PostMapping("/logout")
-    public String logoutPost(HttpSession session) {
-        return doLogout(session);
-    }
 
     private String doLogout(HttpSession session) {
         if (session != null) {
