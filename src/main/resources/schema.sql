@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS users (
     name VARCHAR(255),
     email VARCHAR(255),
     type VARCHAR(20),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     UNIQUE KEY uq_users_username (user_name)
 );
 
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS tasks (
     description TEXT,
     deadline DATE,
     status VARCHAR(20) NOT NULL DEFAULT 'PENDING',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_tasks_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     UNIQUE KEY uq_tasks_per_user_description (user_id, description(100))
 );

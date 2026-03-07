@@ -26,7 +26,9 @@ public class UserTasksController {
 
     @GetMapping
     public String showUserTasks(Model model) {
-        model.addAttribute("newTask", new Task( null, "", LocalDateTime.now(), null, Task.Status.INPROGRESS));
+        Task task = new Task();
+        task.setStatus(Task.Status.INPROGRESS);
+        model.addAttribute("newTask", task);
         // Retrieve user tasks and add to user object in session
         User user = (User) model.getAttribute("user");
         if (user != null) {

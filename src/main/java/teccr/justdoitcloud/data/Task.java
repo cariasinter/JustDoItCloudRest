@@ -14,14 +14,14 @@ import java.time.LocalDate;
 @Table("tasks")
 public class Task {
     @Id
-    private final Long id;
+    private Long id;
     @Size(min=3, message = "Descripcion debe tener al menos 3 caracteres")
-    private final String description;
+    private String description;
     @Column("created_at")
-    private final LocalDateTime createdAt;
-    private final LocalDate deadline;
+    private LocalDateTime createdAt;
+    private LocalDate deadline;
     @NotNull
-    private final Status status;
+    private Status status;
 
     @Column("user_id")
     private Long userId;
